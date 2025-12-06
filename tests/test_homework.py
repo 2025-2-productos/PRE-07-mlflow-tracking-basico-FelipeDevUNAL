@@ -2,6 +2,7 @@
 
 import os
 import subprocess
+import sys
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -13,7 +14,7 @@ def test_01():
     try:
         for model in ["elasticnet", "knn"]:
             subprocess.run(
-                ["python3", "-m", "homework", "--model", model],
+                [sys.executable, "-m", "homework", "--model", model],
                 check=True,
             )
     except subprocess.CalledProcessError as e:
